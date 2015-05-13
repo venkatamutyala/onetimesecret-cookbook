@@ -1,0 +1,12 @@
+name             'onetimesecret'
+maintainer       'The Authors'
+maintainer_email 'you@example.com'
+license          'all_rights'
+description      'Installs/Configures onetimesecret'
+long_description 'Installs/Configures onetimesecret'
+version          '0.1.0'
+
+depends 'apt'
+depends 'git'
+depends 'runit'
+depends 'yum'

@@ -1,0 +1,4 @@
+#!/bin/sh
+exec 2>&1
+sleep 10
+exec /usr/bin/env /usr/local/bin/redis-server /etc/onetime/redis.conf

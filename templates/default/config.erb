@@ -1,0 +1,72 @@
+:site:
+  :host: localhost:7143
+  :domain: localhost
+  :ssl: false
+  # NOTE Once the secret is set, do not change it (keep a backup offsite)
+  :secret: <%= node['onetimesecret']['secret'] %>
+:redis:
+  :uri: <%= node['onetimesecret']['redis_uri'] %>
+  :config: /etc/onetime/redis.conf
+:colonels:
+  - CHANGEME@EXAMPLE.com
+:emailer:
+  :mode: :sendgrid
+  :account: CHANGEME
+  :password: CHANGEME
+  :from: CHANGEME@example.com
+  :fromname: CHANGEME
+  :bcc:
+:incoming:
+  :enabled: true
+  :email: example@onetimesecret.com
+  :passphrase: CHANGEME
+  :regex: \A[a-zA-Z0-9]{6}\z
+:locales:
+  - en
+  - es
+:unsupported_locales:
+  - de
+  - ru
+  - fr
+  - nl
+  - pt
+#:emailer:
+#  :mode: :smtp
+#  :from: delano@onetimesecret.com
+#  :host: localhost
+#  :port: 587
+#  :tls: false
+#  :user:
+#  :pass:
+#  :auth:
+:stathat:
+  :enabled: false
+  :apikey: CHANGEME
+  :default_chart: CHANGEME
+:text:
+  :nonpaid_recipient_text: 'You need to create an account!'
+  :paid_recipient_text: 'Send the secret link via email'
+:limits:
+  :create_secret: 100
+  :create_account: 3
+  :update_account: 5
+  :email_recipient: 10
+  :send_feedback: 3
+  :authenticate_session: 5
+  :homepage: 100
+  :dashboard: 100
+  :failed_passphrase: 5
+  :show_metadata: 200
+  :show_secret: 100
+  :burn_secret: 100
+#:split_tests:
+#  :initial_pricing:
+#    - - basic_v1
+#      - professional_v1
+#      - agency_v1
+#    - - basic_v1
+#      - professional_v2
+#      - agency_v1
+#    - - basic_v1
+#      - professional_v2
+#      - agency_v2

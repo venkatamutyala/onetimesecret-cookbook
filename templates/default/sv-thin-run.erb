@@ -1,0 +1,5 @@
+#!/bin/sh
+
+exec 2>&1
+cd /home/ots/onetimesecret
+exec /usr/bin/env bundle exec thin -e dev -R config.ru -p 7143 start
